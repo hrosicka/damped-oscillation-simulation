@@ -98,6 +98,8 @@ print("Plot saved as 'comparison_plot.png'.")
 python plot.py
 ```
 
+After running the script, you'll get a file named comparison_plot.png, which visually demonstrates the differences between the two numerical methods.
+
 ---
 
 ## 📜 License
