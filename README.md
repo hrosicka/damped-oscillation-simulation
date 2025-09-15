@@ -39,3 +39,19 @@ To run these simulations, you will need a C compiler (like GCC) installed on you
 
 - ```LICENSE```: The project's license (MIT)
 
+## 🧠 About the Methods
+Programs solve the differential equation for a damped harmonic oscillator, but they use different numerical methods to approximate the solution over time.
+
+### Explicit Euler Method (```Euler.c```)
+This is a simple, first-order method. It calculates the new position based on the old velocity and the new velocity based on the old acceleration. While easy to implement, it can introduce numerical errors that cause the simulated energy to increase or decrease over time, making it less stable for long-term oscillatory simulations.
+
+### Euler-Cromer Method (```Euler-Cromer.c```)
+The Euler-Cromer method is a slight but crucial modification. It first calculates the new velocity and then uses this updated velocity to calculate the new position. This simple change significantly improves the method's stability and accuracy, especially for systems that conserve energy (like an undamped oscillator), making it a popular choice in physics simulations.
+
+---
+
+## 📈 Visualizing the Results
+The output files (```damped_oscillation_Euler.txt``` and ```damped_oscillation_Euler_Cromer.txt```) are simple text files with two columns: Time (s) and Position (m). You can easily plot this data to compare the two methods.
+
+### Using Python and Matplotlib
+
