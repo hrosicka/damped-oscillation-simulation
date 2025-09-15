@@ -54,4 +54,11 @@ The Euler-Cromer method is a slight but crucial modification. It first calculate
 The output files (```damped_oscillation_Euler.txt``` and ```damped_oscillation_Euler_Cromer.txt```) are simple text files with two columns: Time (s) and Position (m). You can easily plot this data to compare the two methods.
 
 ### Using Python and Matplotlib
+A common and straightforward way to visualize this data is using a Python script with the popular ```matplotlib``` library.
+
+**Install the necessary library:**
+```Bash
+pip install matplotlib numpy
+```
+
 
