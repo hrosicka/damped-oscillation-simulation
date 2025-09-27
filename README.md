@@ -11,7 +11,7 @@ Each method computes the position of the mass over time and outputs the results 
 
 ---
 
-## Methods Overview
+## 🧠 Methods Overview
 
 ### 1. Explicit Euler Method
 A simple first-order integration technique. It updates the position using the velocity from the previous time step. Suitable for basic simulations but may become unstable for stiff or oscillatory systems.
@@ -59,76 +59,32 @@ To run these simulations, you will need a C compiler (like GCC) installed on you
 
 ---
 
-## 📂 Project Files
+## 📂 Files
 
-- ```Euler.c```: Implements the simulation using the Explicit Euler method.
-
-- ```Euler-Cromer.c```: Implements the simulation using the Euler-Cromer method. This method is a more stable and energy-conserving alternative, especially for oscillatory systems.
-
-- ```LICENSE```: The project's license (MIT)
-
-## 🧠 About the Methods
-Programs solve the differential equation for a damped harmonic oscillator, but they use different numerical methods to approximate the solution over time.
-
-### Explicit Euler Method (```Euler.c```)
-This is a simple, first-order method. It calculates the new position based on the old velocity and the new velocity based on the old acceleration. While easy to implement, it can introduce numerical errors that cause the simulated energy to increase or decrease over time, making it less stable for long-term oscillatory simulations.
-
-### Euler-Cromer Method (```Euler-Cromer.c```)
-The Euler-Cromer method is a slight but crucial modification. It first calculates the new velocity and then uses this updated velocity to calculate the new position. This simple change significantly improves the method's stability and accuracy, especially for systems that conserve energy (like an undamped oscillator), making it a popular choice in physics simulations.
+- `Euler.c` — Explicit Euler method implementation
+- `Euler-Cromer.c` — Euler-Cromer method implementation
+- `Runge-Kutta-RK4.c` — Runge-Kutta RK4 method implementation
+- `plot.py` — Python script for result visualization
+- `damped_oscillation_Euler.txt`, `damped_oscillation_Euler_Cromer.txt`, `damped_oscillation_RK4.txt` — Simulation outputs
+- `comparison_plot.png` — Comparison plot of all methods
 
 ---
 
-## 📈 Visualizing the Results
-The output files (```damped_oscillation_Euler.txt``` and ```damped_oscillation_Euler_Cromer.txt```) are simple text files with two columns: Time (s) and Position (m). You can easily plot this data to compare the two methods.
+## 📈 Visualization
 
-### Using Python and Matplotlib
-A common and straightforward way to visualize this data is using a Python script with the popular ```matplotlib``` library.
+The results from all three methods can be compared using the provided Python script:
 
-**Install the necessary library:**
-```Bash
-pip install matplotlib numpy
-```
+- **Plot script:** `plot.py`
+- **Output plot:** `comparison_plot.png`
 
-**Create a Python script:**
-(e.g., ```plot.py```) with the following code. This script will read both data files, plot the position over time for each method, and save a comparative graph.
-
-```Python
-import matplotlib.pyplot as plt
-import numpy as np
-
-# Load data from the simulation files
-data_euler = np.loadtxt('damped_oscillation_Euler.txt', skiprows=1)
-data_euler_cromer = np.loadtxt('damped_oscillation_Euler_Cromer.txt', skiprows=1)
-
-# Extract time and position for each method
-time_euler, pos_euler = data_euler[:, 0], data_euler[:, 1]
-time_euler_cromer, pos_euler_cromer = data_euler_cromer[:, 0], data_euler_cromer[:, 1]
-
-# Create the plot
-plt.figure(figsize=(10, 6))
-plt.plot(time_euler, pos_euler, label='Explicit Euler Method', linestyle='--', color='red')
-plt.plot(time_euler_cromer, pos_euler_cromer, label='Euler-Cromer Method', color='blue')
-
-# Add labels and title
-plt.title('Comparison of Damped Oscillator Simulation Methods')
-plt.xlabel('Time [s]')
-plt.ylabel('Position [m]')
-plt.legend()
-plt.grid(True)
-plt.savefig('comparison_plot.png')
-plt.show()
-
-print("Plot saved as 'comparison_plot.png'.")
-```
-
-**Run the script:**
-```Bash
+```bash
 python plot.py
 ```
-
-After running the script, you'll get a file named comparison_plot.png, which visually demonstrates the differences between the two numerical methods.
 
 ---
 
 ## 📜 License
 This project is licensed under the MIT License. For more details, see the ```LICENSE``` file.
+
+Feel free to experiment with different physical parameters or time step values to observe how each method behaves!
+
