@@ -11,6 +11,28 @@ Each method computes the position of the mass over time and outputs the results 
 
 ---
 
+## Methods Overview
+
+### 1. Explicit Euler Method
+A simple first-order integration technique. It updates the position using the velocity from the previous time step. Suitable for basic simulations but may become unstable for stiff or oscillatory systems.
+
+- **Source file:** `Euler.c`
+- **Output:** `damped_oscillation_Euler.txt`
+
+### 2. Euler-Cromer Method
+A modification of the Euler method that uses the updated velocity to compute the new position, offering improved stability for oscillatory systems.
+
+- **Source file:** `Euler-Cromer.c`
+- **Output:** `damped_oscillation_Euler_Cromer.txt`
+
+### 3. Runge-Kutta RK4 Method
+A fourth-order integration method that evaluates the system at multiple intermediate points within each time step, providing much higher accuracy.
+
+- **Source file:** `Runge-Kutta-RK4.c`
+- **Output:** `damped_oscillation_RK4.txt
+
+---
+
 ## 🚀 Getting Started
 
 To run these simulations, you will need a C compiler (like GCC) installed on your system.
