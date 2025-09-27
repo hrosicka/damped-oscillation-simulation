@@ -1,7 +1,13 @@
 # Damped Harmonic Oscillator Simulation ⚙️
 
 This repository contains C programs that simulate a damped harmonic oscillator, a fundamental concept in physics and engineering. 
-The simulations model the motion of a mass-spring-damper system using two different numerical integration methods to solve the second-order ordinary differential equation (ODE) of motion.
+The simulations model the motion of a mass-spring-damper system using 3 different numerical integration methods to solve the second-order ordinary differential equation (ODE) of motion.
+
+- **Explicit Euler Method**
+- **Euler-Cromer Method**
+- **Runge-Kutta RK4 Method**
+
+Each method computes the position of the mass over time and outputs the results to a separate data file for analysis and visualization.
 
 ---
 
