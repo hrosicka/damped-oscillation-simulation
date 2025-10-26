@@ -83,6 +83,12 @@ python plot.py
 
 ---
 
+## 👩‍💻 Author
+
+Lovingly crafted by [Hanka Robovska](https://github.com/hrosicka) 👩‍🔬
+
+---
+
 ## 📜 License
 This project is licensed under the MIT License. For more details, see the ```LICENSE``` file.
 
